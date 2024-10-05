@@ -1,21 +1,21 @@
 package model;
 
-import model.Sector;
+import model.enums.Sector;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Ticket {
-    UUID id;
-    String concertHall;
-    Integer eventCode;
-    LocalDateTime time;
-    LocalDateTime ticketCreationTime;
-    Boolean isPromo;
-    Sector stadiumSector;
-    Double maxWeightInKg;
-    BigDecimal price;
+    private UUID id;
+    private String concertHall;
+    private Integer eventCode;
+    private LocalDateTime time;
+    private final LocalDateTime ticketCreationTime = LocalDateTime.now();
+    private Boolean isPromo;
+    private Sector stadiumSector;
+    private Double maxWeightInKg;
+    private BigDecimal price;
 
     public Ticket(UUID id, String concertHall, Integer eventCode, LocalDateTime time, Boolean isPromo,
                   Sector stadiumSector, Double maxWeightInKg, BigDecimal price) {
@@ -23,7 +23,6 @@ public class Ticket {
         setConcertHall(concertHall);
         setEventCode(eventCode);
         this.time = time;
-        this.ticketCreationTime = LocalDateTime.now();
         this.isPromo = isPromo;
         this.stadiumSector = stadiumSector;
         setMaxWeightInKg(maxWeightInKg);
@@ -34,11 +33,13 @@ public class Ticket {
         setConcertHall(concertHall);
         setEventCode(eventCode);
         this.time = time;
-        this.ticketCreationTime = LocalDateTime.now();
     }
 
     public Ticket() {
-        this.ticketCreationTime = LocalDateTime.now();
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
     }
 
     public void setConcertHall(String concertHall) {
@@ -60,6 +61,10 @@ public class Ticket {
             throw new RuntimeException("maxWeightInKg field must be greater than zero .");
         }
         this.maxWeightInKg = maxWeightInKg;
+    }
+
+    public UUID getId() {
+        return id;
     }
 }
 
