@@ -7,6 +7,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.UUID;
 
 public class TicketService {
@@ -37,11 +38,19 @@ public class TicketService {
         createTicket(ticket9);
     }
 
-    public void createTicket(Ticket ticket) {
+    public Ticket createTicket(Ticket ticket) {
         if (ticket.getId() == null) {
             ticket.setId(generateId());
         }
         ticketMap.put(ticket.getId(), ticket);
+        return ticket;
+    }
+
+    public Ticket getById(UUID id) {
+        if (!ticketMap.containsKey(id) || id == null) {
+            throw new NoSuchElementException("Ticket with id " + id + "doesn't exist. ");
+        }
+        return ticketMap.get(id);
     }
 
     private UUID generateId() {
