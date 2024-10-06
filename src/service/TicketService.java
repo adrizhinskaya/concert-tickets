@@ -1,17 +1,25 @@
 package service;
 
-import model.Sector;
+import model.Admin;
+import model.Client;
 import model.Ticket;
-
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.UUID;
 
 public class TicketService {
     public static void main(String[] args) {
         Ticket ticket = new Ticket();
-        Ticket ticket2 = new Ticket("Hall 3", 111, LocalDateTime.now().plusDays(3));
-        Ticket ticket1 = new Ticket(UUID.randomUUID(), "Hall 3", 111,
-                LocalDateTime.now().plusDays(3), false, Sector.A, 7.00, BigDecimal.ONE);
+        Admin admin = new Admin();
+        Client client = new Client();
+
+        ticket.print(); // override print()
+        admin.print(); // override print()
+        client.print(); // base print()
+
+        ticket.shared("+375(25)987-54-32");
+        ticket.shared("+375(25)987-54-32", "someEmail@mail.ru.");
+
+        admin.printRole();
+        admin.checkTicket();
+        client.printRole();
+        client.getTicket();
     }
 }
