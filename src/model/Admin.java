@@ -1,8 +1,10 @@
 package model;
 
-public class Admin extends EntityWithId implements User {
+import model.enums.User;
+
+public class Admin extends User implements Printable {
     public Admin() {
-        setDefaultId();
+        super();
     }
 
     @Override

@@ -1,8 +1,10 @@
 package model;
 
-public class Client extends EntityWithId implements User {
+import model.enums.User;
+
+public class Client extends User implements Printable {
     public Client() {
-        setDefaultId();
+        super();
     }
 
     @Override
