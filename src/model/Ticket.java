@@ -34,17 +34,17 @@ public class Ticket extends EntityWithId {
     }
 
     public Ticket(String concertHall, Integer eventCode, LocalDateTime time) {
+        super();
         checkConcertHall(concertHall);
         checkEventCode(eventCode);
 
-        setDefaultId();
         this.concertHall = concertHall;
         this.eventCode = eventCode;
         this.time = time;
     }
 
     public Ticket() {
-        setDefaultId();
+        super();
     }
 
     public void setTime(LocalDateTime time) {
@@ -87,7 +87,6 @@ public class Ticket extends EntityWithId {
         return price;
     }
 
-    @Override
     public void print() {
         System.out.println("TICKET print() method");
     }
