@@ -1,6 +1,4 @@
-package model.enums;
-
-import model.EntityWithId;
+package model;
 
 public class User extends EntityWithId {
     public User() {
