@@ -1,7 +1,5 @@
 package model;
 
-import model.enums.User;
-
 public class Admin extends User implements Printable {
     public Admin() {
         super();
