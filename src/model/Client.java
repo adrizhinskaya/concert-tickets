@@ -7,11 +7,6 @@ public class Client extends User implements Printable {
         super();
     }
 
-    @Override
-    public void printRole() {
-        System.out.println("CLIENT printRole() method");
-    }
-
     public void getTicket() {
         System.out.println("CLIENT getTicket() method");
     }
