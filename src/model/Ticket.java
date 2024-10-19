@@ -152,5 +152,3 @@ public class Ticket extends EntityWithId {
                 '}';
     }
 }
-
-
