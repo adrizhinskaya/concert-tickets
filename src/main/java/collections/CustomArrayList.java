@@ -44,15 +44,4 @@ public class CustomArrayList<T> {
         this.elements = newArray;
         capacity = newArray.length;
     }
-
-    public static void main(String[] args) {
-        final var ar = new CustomArrayList<Integer>();
-        for (int i = 0; i < 11; i++) {
-            ar.add(i);
-        }
-        System.out.println("Size = " + ar.size);
-        ar.remove(0);
-        System.out.println("Size = " + ar.size);
-        System.out.println(ar.get(1));
-    }
 }
