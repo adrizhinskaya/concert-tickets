@@ -38,6 +38,10 @@ public class CustomArrayList<T> {
         return (T) this.elements[index];
     }
 
+    public int size() {
+        return size;
+    }
+
     private void grow() {
         Object[] newArray = new Object[elements.length + capacity / 2];
         System.arraycopy(elements, 0, newArray, 0, capacity);
