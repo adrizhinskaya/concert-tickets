@@ -1,12 +1,16 @@
 package model;
 
-public class User extends EntityWithId {
-    public User() {
-        super();
-    }
+import jakarta.validation.constraints.NotBlank;
+import lombok.Builder;
+import lombok.Setter;
 
-    public void printRole() {
-        System.out.println("USER printRole() method");
-    }
+import java.time.LocalDate;
 
+@Builder
+@Setter
+public class User {
+    private Long id;
+    //@NotBlank
+    private String name;
+    private LocalDate creationDate;
 }
