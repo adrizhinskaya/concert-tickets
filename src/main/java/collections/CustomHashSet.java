@@ -99,21 +99,4 @@ public class CustomHashSet<E> implements Iterable<E> {
             }
         };
     }
-
-    public static void main(String[] args) {
-        CustomHashSet<String> set = new CustomHashSet<>();
-        set.add("Hello");
-        set.add("World");
-        set.add("Hello");
-
-        System.out.println(set.contains("Hello"));
-        System.out.println(set.contains("Java"));
-
-        for (String s : set) {
-            System.out.println(s);
-        }
-
-        set.remove("Hello");
-        System.out.println(set.contains("Hello"));
-    }
 }

@@ -38,21 +38,14 @@ public class CustomArrayList<T> {
         return (T) this.elements[index];
     }
 
+    public int size() {
+        return size;
+    }
+
     private void grow() {
         Object[] newArray = new Object[elements.length + capacity / 2];
         System.arraycopy(elements, 0, newArray, 0, capacity);
         this.elements = newArray;
         capacity = newArray.length;
-    }
-
-    public static void main(String[] args) {
-        final var ar = new CustomArrayList<Integer>();
-        for (int i = 0; i < 11; i++) {
-            ar.add(i);
-        }
-        System.out.println("Size = " + ar.size);
-        ar.remove(0);
-        System.out.println("Size = " + ar.size);
-        System.out.println(ar.get(1));
     }
 }
